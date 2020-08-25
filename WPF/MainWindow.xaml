@@ -11,21 +11,20 @@
         <local:SalesInfoViewModel/>
     </Window.DataContext>
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <syncfusion:SfDataGrid x:Name="sfdatagrid" 
-                               Grid.Row="1"
-                               ColumnSizer="Star"
-                           ShowGroupDropArea="True"  
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <syncfusion:SfDataGrid x:Name="sfdatagrid"                              
+                           ShowGroupDropArea="True"
+                           ColumnSizer="Star"
                            AutoExpandGroups="True"                               
                            ItemsSource="{Binding YearlySalesDetails}" >
             <syncfusion:SfDataGrid.GroupColumnDescriptions>
                 <syncfusion:GroupColumnDescription ColumnName="Year"/>
             </syncfusion:SfDataGrid.GroupColumnDescriptions>
         </syncfusion:SfDataGrid>
-        <Button x:Name="addColumn" Grid.Row="0" Height="30" Width="120" Margin="10" Content="Add Column"/>
+        <Button x:Name="addColumn" Height="30" VerticalAlignment="Top" Grid.Column="1" Width="100" Content="Add Column"/>
         <interactivity:Interaction.Behaviors>
             <local:SfDataGridBehavior/>
         </interactivity:Interaction.Behaviors>
