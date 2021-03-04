@@ -1,9 +1,9 @@
 # How to programmatically add column to caption summary row in WPF DataGrid (SfDataGrid)?
 
-How to programmatically add column to caption summary row in [WPF DataGrid](https://www.syncfusion.com/wpf-ui-controls/datagrid) (SfDataGrid)?
+This sample show cases how to programmatically add column to caption summary row in [WPF DataGrid](https://www.syncfusion.com/wpf-ui-controls/datagrid) (SfDataGrid)?
 # About the sample
 
-[WPF DataGrid](https://www.syncfusion.com/wpf-ui-controls/datagrid) (SfDataGrid) allows you to add column to CaptionSummaryRow programmatically by adding GridSummaryColumn to CaptionSummaryRow.SummaryColumns.
+[WPF DataGrid](https://www.syncfusion.com/wpf-ui-controls/datagrid) (SfDataGrid) allows you to add column to [CaptionSummaryRow](https://help.syncfusion.com/cr/cref_files/wpf/Syncfusion.SfGrid.WPF~Syncfusion.UI.Xaml.Grid.SfDataGrid~CaptionSummaryRow.html) programmatically by adding [GridSummaryColumn](https://help.syncfusion.com/cr/cref_files/wpf/Syncfusion.SfGrid.WPF~Syncfusion.UI.Xaml.Grid.GridSummaryColumn.html) to [CaptionSummaryRow.SummaryColumns](https://help.syncfusion.com/cr/cref_files/wpf/Syncfusion.SfGrid.WPF~Syncfusion.UI.Xaml.Grid.GridSummaryRow~SummaryColumns.html).
 
 ```c#
 dataGrid.Loaded += DataGrid_Loaded;
