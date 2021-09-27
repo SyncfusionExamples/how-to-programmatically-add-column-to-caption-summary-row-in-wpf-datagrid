@@ -47,5 +47,8 @@ private void addColumn_Click(object sender, RoutedEventArgs e)
     this.dataGrid.GetVisualContainer().InvalidateMeasureInfo();
 }
 ```
+
+KB article - [How to programmatically add column to caption summary row in WPF DataGrid (SfDataGrid)?](https://www.syncfusion.com/kb/11914/how-to-programmatically-add-column-to-caption-summary-row-in-wpf-datagrid-sfdatagrid)
+
 ## Requirements to run the demo
  Visual Studio 2015 and above versions
