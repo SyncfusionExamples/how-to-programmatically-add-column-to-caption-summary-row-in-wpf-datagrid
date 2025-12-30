@@ -1,9 +1,8 @@
-# How to programmatically add column to caption summary row in WPF DataGrid (SfDataGrid)?
+# How to Programmatically Add Column to Caption Summary Row in WPF DataGrid?
 
-This sample show cases how to programmatically add column to caption summary row in [WPF DataGrid](https://www.syncfusion.com/wpf-ui-controls/datagrid) (SfDataGrid)?
-# About the sample
+This sample show cases how to programmatically add column to caption summary row in [WPF DataGrid](https://www.syncfusion.com/wpf-controls/datagrid) (SfDataGrid).
 
-[WPF DataGrid](https://www.syncfusion.com/wpf-ui-controls/datagrid) (SfDataGrid) allows you to add column to [CaptionSummaryRow](https://help.syncfusion.com/cr/cref_files/wpf/Syncfusion.SfGrid.WPF~Syncfusion.UI.Xaml.Grid.SfDataGrid~CaptionSummaryRow.html) programmatically by adding [GridSummaryColumn](https://help.syncfusion.com/cr/cref_files/wpf/Syncfusion.SfGrid.WPF~Syncfusion.UI.Xaml.Grid.GridSummaryColumn.html) to [CaptionSummaryRow.SummaryColumns](https://help.syncfusion.com/cr/cref_files/wpf/Syncfusion.SfGrid.WPF~Syncfusion.UI.Xaml.Grid.GridSummaryRow~SummaryColumns.html).
+`DataGrid` allows you to add column to [CaptionSummaryRow](https://help.syncfusion.com/cr/wpf/Syncfusion.UI.Xaml.Grid.SfDataGrid.html#Syncfusion_UI_Xaml_Grid_SfDataGrid_CaptionSummaryRow) programmatically by adding [GridSummaryColumn](https://help.syncfusion.com/cr/wpf/Syncfusion.UI.Xaml.Grid.GridSummaryColumn.html) to [CaptionSummaryRow.SummaryColumns](https://help.syncfusion.com/cr/wpf/Syncfusion.UI.Xaml.Grid.SfDataGrid.html#Syncfusion_UI_Xaml_Grid_SfDataGrid_CaptionSummaryRow).
 
 ```c#
 dataGrid.Loaded += DataGrid_Loaded;
@@ -34,21 +33,21 @@ private void DataGrid_Loaded(object sender, System.Windows.RoutedEventArgs e)
         }
     };
 }
+
 private void addColumn_Click(object sender, RoutedEventArgs e)
 {
     this.dataGrid.CaptionSummaryRow.SummaryColumns.Add(new GridSummaryColumn() { Name = "Q1Sales", MappingName = "QS1", SummaryType = SummaryType.Int32Aggregate, Format = "{Sum:d}" });
     this.dataGrid.CaptionSummaryRow.Title = "Total Sales: {SalesAmount} for NumberOfYears: {NumberOfYears} and Quaterly Sales is {Q1Sales}";
     this.dataGrid.View.CaptionSummaryRow = this.dataGrid.CaptionSummaryRow;
+    
     this.dataGrid.RowGenerator.Items.ForEach(o =>
     {
         if (o.RowType == RowType.CaptionCoveredRow || o.RowType == RowType.CaptionRow)
             o.GetType().GetProperty("RowIndex").SetValue(o, -1);
     });
+
     this.dataGrid.GetVisualContainer().InvalidateMeasureInfo();
 }
 ```
 
-KB article - [How to programmatically add column to caption summary row in WPF DataGrid (SfDataGrid)?](https://www.syncfusion.com/kb/11914/how-to-programmatically-add-column-to-caption-summary-row-in-wpf-datagrid-sfdatagrid)
-
-## Requirements to run the demo
- Visual Studio 2015 and above versions
+![Adding column to the caption summary row in DataGrid](DataGridAddedCaptionSummaryColumn.gif)
